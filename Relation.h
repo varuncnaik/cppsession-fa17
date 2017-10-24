@@ -38,7 +38,20 @@ public:
      */
     unsigned int getCardinality() const;
 
-    void addTuple(int *values);
+    /**
+     * Creates a Tuple using the specified parameters and stores it in the
+     * Relation.
+     * @param values The values for the Tuple constructor.
+     */
+    void addTuple(const int *values);
 
-    Tuple *getTuple(unsigned int index);
+    /**
+     * Gets the Tuple at the specified index in the Relation in O(1) time,
+     * or throws an std::invalid_argument.
+     * @param index The index of the desired Tuple.
+     * @return A pointer to the Tuple at the specified index. The Tuple cannot
+     * be modified. If the Relation is deallocated, then the pointer is a
+     * dangling pointer.
+     */
+    const Tuple *getTuple(unsigned int index) const;
 };

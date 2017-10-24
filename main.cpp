@@ -40,6 +40,20 @@ void test2() {
     assert(student.getNumAttributes() == 3);
     assert(student.getCardinality() == 0);
 
+    // Insert a Tuple and make sure it was inserted correctly
+    int values[] = {1, 2, 3};
+    student.addTuple(values);
+    const Tuple *t0 = student.getTuple(0);
+    assert(t0 != nullptr);
+    assert(t0->getValue(0) == 1);
+    assert(t0->getValue(1) == 2);
+    assert(t0->getValue(2) == 3);
+
+    // Get a Tuple with an index out of bounds
+    try {
+        student.getTuple(1);
+    } catch (std::invalid_argument &e) {}
+
     std::cout << "Passed Test 2" << std::endl;
 }
 
