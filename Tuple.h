@@ -6,9 +6,9 @@ private:
     unsigned int numValues;
 
 public:
-    Tuple(int *values, unsigned int numValues);
+    Tuple(const int *values, unsigned int numValues);
 
     ~Tuple();
 
-    int getValue(unsigned int index);
+    int getValue(unsigned int index) const;
 };
