@@ -1,3 +1,4 @@
+#include "Relation.h"
 #include "Tuple.h"
 
 #include <cassert>
@@ -19,8 +20,19 @@ void test1() {
     std::cout << "Passed Test 1" << std::endl;
 }
 
+void test2() {
+    std::cout << "Test 2" << std::endl;
+
+    Relation student(3);
+    assert(student.getNumAttributes() == 3);
+    assert(student.getCardinality() == 0);
+
+    std::cout << "Passed Test 2" << std::endl;
+}
+
 int main() {
     test1();
+    test2();
     std::cout << "Passed all tests" << std::endl;
     return 0;
 }

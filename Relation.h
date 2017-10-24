@@ -16,9 +16,9 @@ public:
 
     ~Relation();
 
-    unsigned int getNumAttributes();
+    unsigned int getNumAttributes() const;
 
-    unsigned int getCardinality();
+    unsigned int getCardinality() const;
 
     void addTuple(int *values);
 
