@@ -40,7 +40,8 @@ public:
 
     /**
      * Creates a Tuple using the specified parameters and stores it in the
-     * Relation.
+     * Relation. Runs in O(1) amortized time, but O(cardinality) time if a
+     * resize occurs.
      * @param values The values for the Tuple constructor.
      */
     void addTuple(const int *values);

@@ -15,6 +15,14 @@ Relation::~Relation() {
 }
 
 void Relation::resize() {
+    // Policy: double the capacity
+    Tuple **newTuples = new Tuple*[this->cardinality * 2];
+    for (unsigned int i = 0; i < this->capacity; ++i) {
+        newTuples[i] = this->tuples[i];
+    }
+    this->capacity *= 2;
+    delete[] this->tuples;
+    this->tuples = newTuples;
 }
 
 unsigned int Relation::getNumAttributes() const {
